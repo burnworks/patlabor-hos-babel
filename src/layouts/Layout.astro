@@ -1,0 +1,43 @@
+---
+import "@fontsource/crimson-text/400.css";
+import "@fontsource/crimson-text/600.css";
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	html {
+		font-family: "Crimson Text", serif;
+	}
+	body {
+		width: 100vw;
+		height: 100lvh;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+	body::-webkit-scrollbar {
+		display: none;
+	}
+</style>

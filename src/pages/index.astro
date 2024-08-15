@@ -1,0 +1,141 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const numRows = 10;
+const numCols = 6;
+
+const divs = Array.from({ length: numRows * numCols });
+---
+
+<Layout
+	title="BABEL"
+	description="An unofficial fan art recreating the runaway state of the 'HOS' (Hyper Operating System) from Patlabor: The Movie (機動警察パトレイバー the Movie) using HTML and CSS."
+>
+	<div class="filter" aria-hidden="true"></div>
+	<main>
+		{divs.map(() => <div>Babel</div>)}
+	</main>
+</Layout>
+<style>
+	.filter {
+		z-index: 10;
+		inset: 0px;
+		position: absolute;
+		animation-name: babel-filter;
+		animation-duration: 0.1s;
+		animation-iteration-count: infinite;
+	}
+	main {
+		width: 110vw;
+		height: 110vh;
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: repeat(10, 1fr);
+		gap: 10px;
+		background-color: black;
+		color: red;
+		text-shadow: 0 0 3rem #ef4444;
+		animation-name: babel;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+
+		div {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-transform: uppercase;
+			font-size: 4vw;
+			letter-spacing: 0.05em;
+		}
+
+		div:nth-child(n + 1):nth-child(-n + 6),
+		div:nth-child(n + 13):nth-child(-n + 18),
+		div:nth-child(n + 25):nth-child(-n + 30),
+		div:nth-child(n + 37):nth-child(-n + 42),
+		div:nth-child(n + 49):nth-child(-n + 54) {
+			transform: translateX(0);
+			animation-name: babel-transform-odd;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+		}
+
+		div:nth-child(n + 7):nth-child(-n + 12),
+		div:nth-child(n + 19):nth-child(-n + 24),
+		div:nth-child(n + 31):nth-child(-n + 36),
+		div:nth-child(n + 43):nth-child(-n + 48),
+		div:nth-child(n + 55):nth-child(-n + 60) {
+			transform: translateX(0.35em);
+			animation-name: babel-transform-even;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+		}
+	}
+
+	@keyframes babel-filter {
+		0% {
+			background-color: rgb(255, 255, 255, 0.1);
+		}
+		49% {
+			background-color: rgb(255, 255, 255, 0.1);
+		}
+		50% {
+			background-color: transparent;
+		}
+		100% {
+			background-color: transparent;
+		}
+	}
+
+	@keyframes babel {
+		0% {
+			background-color: black;
+			color: red;
+			text-shadow: 0 0 3rem #ef4444;
+		}
+		49% {
+			background-color: black;
+			color: red;
+			text-shadow: 0 0 3rem #ef4444;
+		}
+		50% {
+			background-color: red;
+			color: rgb(255, 255, 255, 0.85);
+			text-shadow: 0 0 3rem rgb(255, 255, 255, 0.85);
+		}
+		100% {
+			background-color: red;
+			color: rgb(255, 255, 255, 0.85);
+			text-shadow: 0 0 3rem rgb(255, 255, 255, 0.85);
+		}
+	}
+
+	@keyframes babel-transform-even {
+		0% {
+			transform: translateX(0.35em);
+		}
+		49% {
+			transform: translateX(0.35em);
+		}
+		50% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(0);
+		}
+	}
+
+	@keyframes babel-transform-odd {
+		0% {
+			transform: translateX(0);
+		}
+		49% {
+			transform: translateX(0);
+		}
+		50% {
+			transform: translateX(0.35em);
+		}
+		100% {
+			transform: translateX(0.35em);
+		}
+	}
+</style>
