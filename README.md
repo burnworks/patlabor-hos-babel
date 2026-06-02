@@ -9,6 +9,9 @@ An unofficial fan art recreating the runaway state of the 'HOS' (Hyper Operating
 
 [https://burnworks.github.io/patlabor-hos-babel/](https://burnworks.github.io/patlabor-hos-babel/)
 
+全画面表示がおすすめ  
+Full-screen mode is recommended.
+
 ## Link
 
 [Patlabor Official Website](https://patlabor.tokyo/)
