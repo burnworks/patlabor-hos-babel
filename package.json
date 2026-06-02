@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "@fontsource/crimson-text": "^5.2.7",
-    "@tailwindcss/vite": "^4.2.1",
-    "astro": "^5.18.0",
-    "tailwindcss": "^4.2.1",
-    "typescript": "^5.9.3"
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^6.4.2",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^6.0.3"
   }
 }
